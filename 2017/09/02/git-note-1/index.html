@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="笔记,git," />
+  <meta name="keywords" content="git,笔记," />
 
 
 
@@ -37,18 +37,18 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="2017.8.28学习网址： http://iissnan.com/progit/html/zh/ch2_2.html 1.忽略某些文件$ cat .gitignore //没明白，执行这个指令错误.[oa] ~正则表达式？？？？？？？？？？？？？补充知识git status //列出修改过时文件git diff // 当前文件和未暂存的文件差别，显示内容git diff –cached //已暂">
+<meta name="description" content="2017.8.28学习网址： http://iissnan.com/progit/html/zh/ch2_2.html 1.忽略某些文件$ cat .gitignore //没明白，执行这个指令错误 *.[oa] *~ 正则表达式？？？？？？？？？？？？？补充知识 git status //列出修改过时文件git diff // 当前文件和未暂存的文件差别，显示内容git diff –cached">
 <meta name="keywords" content="git,笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git-note">
 <meta property="og:url" content="https://cd-qz.github.io/2017/09/02/git-note-1/index.html">
 <meta property="og:site_name" content=".-.. -..- .--">
-<meta property="og:description" content="2017.8.28学习网址： http://iissnan.com/progit/html/zh/ch2_2.html 1.忽略某些文件$ cat .gitignore //没明白，执行这个指令错误.[oa] ~正则表达式？？？？？？？？？？？？？补充知识git status //列出修改过时文件git diff // 当前文件和未暂存的文件差别，显示内容git diff –cached //已暂">
+<meta property="og:description" content="2017.8.28学习网址： http://iissnan.com/progit/html/zh/ch2_2.html 1.忽略某些文件$ cat .gitignore //没明白，执行这个指令错误 *.[oa] *~ 正则表达式？？？？？？？？？？？？？补充知识 git status //列出修改过时文件git diff // 当前文件和未暂存的文件差别，显示内容git diff –cached">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-01T19:42:30.292Z">
+<meta property="og:updated_time" content="2017-09-06T14:40:30.001Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git-note">
-<meta name="twitter:description" content="2017.8.28学习网址： http://iissnan.com/progit/html/zh/ch2_2.html 1.忽略某些文件$ cat .gitignore //没明白，执行这个指令错误.[oa] ~正则表达式？？？？？？？？？？？？？补充知识git status //列出修改过时文件git diff // 当前文件和未暂存的文件差别，显示内容git diff –cached //已暂">
+<meta name="twitter:description" content="2017.8.28学习网址： http://iissnan.com/progit/html/zh/ch2_2.html 1.忽略某些文件$ cat .gitignore //没明白，执行这个指令错误 *.[oa] *~ 正则表达式？？？？？？？？？？？？？补充知识 git status //列出修改过时文件git diff // 当前文件和未暂存的文件差别，显示内容git diff –cached">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -219,17 +219,30 @@
 
       
         <span itemprop="articleBody"><h1 id="2017-8-28"><a href="#2017-8-28" class="headerlink" title="2017.8.28"></a>2017.8.28</h1><p>学习网址： <a href="http://iissnan.com/progit/html/zh/ch2_2.html" target="_blank" rel="external">http://iissnan.com/progit/html/zh/ch2_2.html</a></p>
-<h2 id="1-忽略某些文件"><a href="#1-忽略某些文件" class="headerlink" title="1.忽略某些文件"></a>1.忽略某些文件</h2><p>$ cat .gitignore //没明白，执行这个指令错误<br><em>.[oa]
-</em>~<br>正则表达式？？？？？？？？？？？？？补充知识<br>git status //列出修改过时文件<br>git diff // 当前文件和未暂存的文件差别，显示内容<br>git diff –cached //已暂存的文件和上次提交时的快照的差异<br>git diff –staged // 同上<br>git add 两个作用：1.开始跟踪新文件   2.将已跟踪的文件放到暂存区<br>git commit -m”说明”//将暂存区内容提交<br>git commit -a -m”说明”//将所有跟踪过的文件提交，越过git add步骤<br>git rm –cached //从仓库和暂存区移除，但不删除当前目录中的该文件<br>$ git rm log/*.log？？？？？？//不懂<br>git mv file1 file2//给文件重命名，将file1改为file2 –等同于mv file1  file2 ; git rm file1;git add file2<br>git clone url file //克隆</p>
+<h2 id="1-忽略某些文件"><a href="#1-忽略某些文件" class="headerlink" title="1.忽略某些文件"></a>1.忽略某些文件</h2><pre><code>$ cat .gitignore //没明白，执行这个指令错误
+*.[oa]
+*~
+</code></pre><p>正则表达式？？？？？？？？？？？？？补充知识</p>
+<p>git status //列出修改过时文件<br>git diff // 当前文件和未暂存的文件差别，显示内容<br>git diff –cached //已暂存的文件和上次提交时的快照的差异<br>git diff –staged // 同上<br>git add 两个作用：1.开始跟踪新文件   2.将已跟踪的文件放到暂存区<br>git commit -m //将暂存区内容提交 m:modified<br>git commit -a -m //将所有跟踪过的文件提交，越过git add步骤<br>git rm –cached //从仓库和暂存区移除，但不删除当前目录中的该文件<br>$ git rm log/*.log？？？？？？//不懂<br>git mv file1 file2//给文件重命名，将file1改为file2 –等同于mv file1  file2 ; git rm file1;git add file2<br>git clone url file //克隆</p>
 <h2 id="查看提交历史"><a href="#查看提交历史" class="headerlink" title="查看提交历史"></a>查看提交历史</h2><p>git log //回顾提交历史<br>git log –pretty=oneline //单行显示每个log（oneline还可改为short,full,fuller有不同效果）<br>git log -p //展开每次提交的内容差异：git log -p -2 显示最近两次更新<br>git log -p –word-diff //单词层面对比<br>git log –start //仅显示简单的增改行数统计<br>git log –pretty=format:”%h - %an,%ar : %s”//引号后面内容为想显示的格式<br> ｛<br>选项     说明<br>%H    提交对象（commit）的完整哈希字串<br>%h    提交对象的简短哈希字串<br>%T    树对象（tree）的完整哈希字串<br>%t    树对象的简短哈希字串<br>%P    父对象（parent）的完整哈希字串<br>%p    父对象的简短哈希字串<br>%an    作者（author）的名字<br>%ae    作者的电子邮件地址<br>%ad    作者修订日期（可以用 -date= 选项定制格式）<br>%ar    作者修订日期，按多久以前的方式显示<br>%cn    提交者(committer)的名字<br>%ce    提交者的电子邮件地址<br>%cd    提交日期<br>%cr    提交日期，按多久以前的方式显示<br>%s    提交说明<br>  ｝<br>   // 你一定奇怪作者（author）和提交者（committer）之间究竟有何差别，其实作者指的是实际作出修改的人，提交者指的是最后将此工作成果提交到仓库的人。所以，当你为某个项目发布补丁，然后某个核心成员将你的补丁并入项目时，你就是作者，而那个核心成员就是提交者。<br>｛<br>选项    说明<br>-p    按补丁格式显示每个更新之间的差异。（patch）<br>–word-diff    按 word diff 格式显示差异。<br>–stat    显示每次更新的文件修改统计信息。<br>–shortstat    只显示 –stat 中最后的行数修改添加移除统计。<br>–name-only    仅在提交信息后显示已修改的文件清单。<br>–name-status    显示新增、修改、删除的文件清单。<br>–abbrev-commit    仅显示 SHA-1 的前几个字符，而非所有的 40 个字符。<br>–relative-date    使用较短的相对时间显示（比如，“2 weeks ago”）。<br>–graph    显示 ASCII 图形表示的分支合并历史。<br>–pretty    使用其他格式显示历史提交信息。可用的选项包括 oneline，short，full，fuller 和 format（后跟指定格式）。<br>–oneline    <code>--pretty=oneline --abbrev-commit</code> 的简化用法。<br> ｝<br> git log –since=2.weeks //近两周<br> 还有很多log 命令。。。。。。。。。。。。？？？？？？？？？？？？？？</p>
-<h2 id="撤销操作"><a href="#撤销操作" class="headerlink" title="撤销操作"></a>撤销操作</h2><p>git commit –amend// 有时候我们提交完了才发现漏掉了几个文件没有加，<br>  或者提交信息写错了。想要撤消刚才的提交操作，可以使用 –amend 选项重新提交：<br>  使用当前暂存区快照提交，覆盖刚才的提交<br>若提交时忘了暂存某些修改，可先补上暂存，再运行 –amend:<br>        $ git commit -m ‘initial commit’<br>        $ git add forgotten_file<br>        $ git commit –amend<br>     上面的三条命令最终只是产生一个提交，第二个提交命令修正了第一个的提交内容。</p>
+<h2 id="撤销操作"><a href="#撤销操作" class="headerlink" title="撤销操作"></a>撤销操作</h2><p>git commit –amend// 有时候我们提交完了才发现漏掉了几个文件没有加，或者提交信息写错了。想要撤消刚才的提交操作，可以使用 –amend 选项重新提交：使用当前暂存区快照提交，覆盖刚才的提交<br>若提交时忘了暂存某些修改，可先补上暂存，再运行 –amend:<br>        $ git commit -m ‘initial commit’<br>        $ git add forgotten_file<br>        $ git commit –amend<br>     上面的三条命令最终只是产生一个提交，第二个提交命令修正了第一个的提交内容。</p>
 <p>git reset HEAD <file>… //取消已经暂存的文件<br>git checkout –<file>// 取消对文件的修改</file></file></p>
-<h2 id="远程仓库使用"><a href="#远程仓库使用" class="headerlink" title="远程仓库使用"></a>远程仓库使用</h2><p>git remote -v //v是verbose,列出远程仓库地址<br>git remote add pb [url]//添加远程仓库，现在可以用字符串 pb 指代对应的仓库地址了<br>git fetch [remote-name] //到远程仓库中拉取所有你本地仓库中还没有的数据，<br>fetch 命令只是将远端的数据拉到本地仓库，并不自动合并到当前工作分支，<br>只有当你确实准备好了，才能手工合并<br>git pull //如果设置了某个分支用于跟踪某个远端仓库的分支，<br>可以使用 git pull 命令自动抓取数据下来，然后将远端分支自动合并到本地仓库中当前分支。<br>实际上，默认情况下 git clone 命令本质上就是自动创建了本地的 master 分支用于跟踪远程<br>仓库中的 master 分支（假设远程仓库确实有 master 分支）。所以一般我们运行 git pull，<br>目的都是要从原始克隆的远端仓库中抓取数据后，合并到工作目录中的当前分支。</p>
+<h2 id="远程仓库使用"><a href="#远程仓库使用" class="headerlink" title="远程仓库使用"></a>远程仓库使用</h2><p>git remote -v //v是verbose,列出远程仓库地址<br>git remote add pb [url]//添加远程仓库，现在可以用字符串 pb 指代对应的仓库地址了<br>git fetch [remote-name] //到远程仓库中拉取所有你本地仓库中还没有的数据，<br>fetch 命令只是将远端的数据拉到本地仓库，并不自动合并到当前工作分支，<br>只有当你确实准备好了，才能手工合并<br>git pull //如果设置了某个分支用于跟踪某个远端仓库的分支，<br>可以使用 git pull命令自动抓取数据下来，然后将远端分支自动合并到本地仓库中当前分支。实际上，默认情况下 git  clone 命令本质上就是自动创建了本地的 master 分支用于跟踪远程仓库中的 master分支（假设远程仓库确实有 master 分支）。所以一般我们运行 git pull，目的都是要从 原始克隆的远端仓库中抓取数据后，合并到工作目录中的当前分支。</p>
 <p>git push [remote-name] [branch-name]//<br>如果要把本地的 master 分支推送到 origin 服务器上<br>（再次说明下，克隆操作会自动使用默认的 master 和 origin 名字），<br>可以运行下面的命令：git push origin master。<br>只有在所克隆的服务器上有写权限，或者同一时刻没有其他人在推数<br>据，这条命令才会如期完成任务。如果在你推数据前，已经有其他人<br>推送了若干更新，那你的推送操作就会被驳回。你必须先把他们的更<br>新抓取到本地，合并到自己的项目中，然后才可以再次推送。</p>
 <p>git remote show [remote-name]//查看某个远程仓库的详细信息</p>
 <p>git remote rename// 命令修改某个远程仓库在本地的简称 $ git remote rename pb paul</p>
 <p>git remote rm//移除对应的远端仓库</p>
-<h1 id="2017-8-31"><a href="#2017-8-31" class="headerlink" title="2017.8.31"></a>2017.8.31</h1></span>
+<h1 id="2017-9-6"><a href="#2017-9-6" class="headerlink" title="2017.9.6"></a>2017.9.6</h1><h2 id="移除文件"><a href="#移除文件" class="headerlink" title="移除文件"></a>移除文件</h2><pre><code>git rm //删除本地文件并从已跟踪文件清单中移除，删除后提交
+</code></pre><p>执行上述命令后远程仓库文件依旧在，删除远程仓库以及远程仓库中文件方法：</p>
+<pre><code>git remote rm 
+//出现如下错误：fatal: 不是一个 git 仓库（或者向上递归至挂载点 / 的任何祖先目录）停止在文件系统边界（未设置 GIT_DISCOVERY_ACROSS_FILESYSTEM）。
+
+git rm -r --cached a/2.txt //删除a目录下的2.txt文件   删除a目录g也会it rm -r --cached a
+git commit -m &quot;删除a目录下的2.txt文件&quot; 
+git push
+//出现同上错误
+</code></pre><p>解决：将本地文件删除后需要git push ，这样远程仓库也会删除，但是后面两种方法的错误未解决。</p>
+</span>
       
     </div>
 
@@ -237,9 +250,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/笔记/" rel="tag">#笔记</a>
-          
             <a href="/tags/git/" rel="tag">#git</a>
+          
+            <a href="/tags/笔记/" rel="tag">#笔记</a>
           
         </div>
       
@@ -502,7 +515,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2017-8-28"><span class="nav-number">1.</span> <span class="nav-text">2017.8.28</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-忽略某些文件"><span class="nav-number">1.1.</span> <span class="nav-text">1.忽略某些文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看提交历史"><span class="nav-number">1.2.</span> <span class="nav-text">查看提交历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#撤销操作"><span class="nav-number">1.3.</span> <span class="nav-text">撤销操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#远程仓库使用"><span class="nav-number">1.4.</span> <span class="nav-text">远程仓库使用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2017-8-31"><span class="nav-number">2.</span> <span class="nav-text">2017.8.31</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2017-8-28"><span class="nav-number">1.</span> <span class="nav-text">2017.8.28</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-忽略某些文件"><span class="nav-number">1.1.</span> <span class="nav-text">1.忽略某些文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看提交历史"><span class="nav-number">1.2.</span> <span class="nav-text">查看提交历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#撤销操作"><span class="nav-number">1.3.</span> <span class="nav-text">撤销操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#远程仓库使用"><span class="nav-number">1.4.</span> <span class="nav-text">远程仓库使用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2017-9-6"><span class="nav-number">2.</span> <span class="nav-text">2017.9.6</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#移除文件"><span class="nav-number">2.1.</span> <span class="nav-text">移除文件</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
